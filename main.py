@@ -2,22 +2,19 @@ import random
 import dictionary
 import hangmanart
 
-word_list = dictionary.word_bank
 
-#choose a mystery word
-bank_length = len(word_list)
-rand_select = random.randint(0, (bank_length - 1))
-
-chosen_word = word_list[rand_select].lower()
-length = len(chosen_word)
 
 
 def play():
 
-  def play_again():
-    choice = input("Do you want to play again? ").lower()
-    if choice == "yes":
-      play()
+  word_list = dictionary.word_bank
+
+  #choose a mystery word
+  bank_length = len(word_list)
+  rand_select = random.randint(0, (bank_length - 1))
+  
+  chosen_word = word_list[rand_select].lower()
+  length = len(chosen_word)
 
   #display word with blanks
   display = []
@@ -59,16 +56,17 @@ def play():
         print("Good choice!!")
         display[position] = guess
         print(" ")
-        print(f"LETTER BANK: {letter_bank}")
   
     if letter not in chosen_word:
       print("Bad choice!!")
       letter_bank += letter + " "
       print(" ")
-      print(f"LETTER BANK: {letter_bank}")
+      
       lives -= 1
       stage -= 1
-      
+    
+    print(" ")
+    print(f"LETTER BANK: {letter_bank}")
     print(" ")
     print(hangmanart.stages[stage])
     print("-------------------")
@@ -90,7 +88,7 @@ def play():
       print(" ")
       print(f"The correct word was'{chosen_word}'!")
       print(hangmanart.sad)
-      play_again()
+      # play_again()
       
   
     
@@ -105,9 +103,17 @@ def play():
       print(" ")
       print(f"The correct word was '{chosen_word}'!")
       print(" ")
-      play_again()
+      # play_again()
       print(" ")
 
 
+
+def play_again():
+    choice = input("Do you want to play again? ").lower()
+    if choice == "yes":
+      print(" ")
+      play()
+
   
 play()
+play_again()
