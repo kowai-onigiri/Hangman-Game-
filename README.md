@@ -6,14 +6,9 @@ This is a solution to the Day 7 of Angela Yu's 100 Days of Code: The Complete Py
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-
 
 
 ## Overview
